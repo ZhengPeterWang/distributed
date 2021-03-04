@@ -1,0 +1,134 @@
+% 完整编译: xelatex -> bibtex -> xelatex -> xelatex
+\documentclass[UTF8,AutoFakeBold=1,AutoFakeSlant,zihao=-4]{cucthesis}
+
+% 在这里填写你的论文题目
+\newcommand{\thesisTitle}{\hologo{LaTeX}毕业论文写作模板}
+\newcommand{\thesisTitleEN}{English Title (not used)}
+
+% 在这里填写你的相关信息
+\newcommand{\yourDept}{计算机与网络空间安全学院}
+\newcommand{\yourMajor}{计算机科学与技术}
+\newcommand{\yourName}{王同学}
+\newcommand{\yourClass}{2020级01班}
+\newcommand{\yourMentor}{王老师}
+\newcommand{\studentID}{202020111222333}
+
+
+\begin{document}
+
+% 封面（自动生成）
+\coverpage
+
+% 中文摘要
+\begin{abstract}
+随着3G时代的来临，移动通信技术正从提供简单的话音业务、
+低速数据业务向提供话音业务和可变带宽的多媒体数据业务相结合的方向发展。
+天线，作为移动通信无线链路中最重要的部件，也因此成为研究重点，
+受到了越来越广泛的关注。
+\keywords{数字信号处理；音频信号频谱；MATLAB；FFT；DSP}     % 中文关键词
+\end{abstract}
+
+% 英文摘要
+\begin{abstractEN}
+With the coming of the era named ``Third Generation'',
+the mobile communication technologies are changing
+its direction from providing simple services of voice
+and low speed data transmission to providing combination
+services of voice and multi-media data transmission with
+variable band-width. Antennas, as the most important part
+in the radio link of mobile communication, become an
+important research topic, and attract more and more attentions.
+\keywordsEN{DSP, Spectral Analysis, FFT, MATLAB}       % 英文关键词
+\end{abstractEN}
+
+% 目录（自动生成）
+\contentpage
+
+\section{始于足下——理论模型}
+
+\subsection{分布式系统及其设计目标}
+正文……\cite{bib01}正文正文\cite{bib02}正文正文\cite{bib01,bib02}
+
+\subsection{二级标题}
+引用图\ref{fig}，表\ref{tab}，公式\eqref{eq:0}
+
+
+\subsubsection{图片}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.64]{imgs/fig.png}
+    \caption{工科生工作现场}    \label{fig}
+\end{figure}
+
+\subsubsection{表格}
+\begin{table}[ht]
+    \centering\caption{特征描述}
+    \begin{tabular}{lll}
+    \toprule  \label{tab}
+                 & 特征描述    & 特征维数      \\   \midrule
+    平均过零率    & 波形穿过x轴的频率   & 1     \\
+    平均光谱质心  & 指示声音的“质心”    & 1     \\  \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\subsubsection{公式}
+
+\begin{equation}
+    loss = - \sum_{i=1}^{n}{y_i\:log(\hat{y_i})} +     \label{eq:0}
+    \lambda {\left\lVert\omega\right\rVert}_2^2
+\end{equation}
+
+\subsubsection{代码}
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+def normalize(x):
+    mean = np.mean(x)
+    std = np.std(x, ddof=1)
+    return (x - mean) / std
+
+\end{lstlisting}
+
+\section{统揽全局——系统全序和全局谓词赋值}
+
+\newpage
+
+\section{合众为一——一致性}
+
+\newpage
+
+\section{整齐划一——状态机复制}
+
+\newpage
+
+\section{民主集中——同步情形下的共识协议}
+
+\newpage
+
+\section{无和奈何——FLP不可能定理}
+
+\newpage
+
+\section{柳暗花明——绕过FLP定理的方法}
+
+\newpage
+
+\section{道高一丈——拜占廷容错共识协议}
+
+
+% 参考文献（自动生成）
+\begin{references}
+    \bibliography{references.bib}
+\end{references}
+
+\nonumsection{附录}
+\appendixformat     % 作为附录时，使用该命令为图表更新格式
+123
+
+\nonumsection{后记}
+123
+
+\end{document}
